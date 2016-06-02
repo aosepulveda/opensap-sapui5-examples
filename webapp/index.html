@@ -10,12 +10,22 @@
 			data-sap-ui-theme="sap_bluecrystal"
 			data-sap-ui-libs="sap.m"
 			data-sap-ui-compatVersion="edge"
-			data-sap-ui-preload="async">
+			data-sap-ui-preload="async"
+			data-sap-ui-resourceroots='{
+				"opensap.myapp": "./"
+			}'>
+
 		</script>
 
 		<script>
 			sap.ui.getCore().attachInit(function () {
-				alert("SAPUI5 is ready");
+				/*var iImage = new sap.m.Image({
+					src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Wikipedia_Hello_World_Graphic.svg/2000px-Wikipedia_Hello_World_Graphic.svg.png"
+				}).placeAt("content");
+				oImage.setHeight("400px");*/
+				sap.ui.xmlview({
+					viewName: "opensap.myapp.view.App"
+				}).placeAt("content");
 			});
 		</script>
 	</head>
