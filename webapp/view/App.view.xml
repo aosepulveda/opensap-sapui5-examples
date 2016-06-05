@@ -86,7 +86,18 @@
 												title="{Name}"
 												number="{Price}"
 												intro="{ProductID}"
-												numberUnit="{CurrencyCode}"/>
+												numberState="{= ${Price} > 500 ? 'Error' : 'Success'}"
+												numberUnit="{CurrencyCode}">
+												<firstStatus>
+													<ObjectStatus text="{
+														parts: [
+															{path: 'WeightUnit'},
+															{path: 'WeightMeasure'}
+														],
+														formatter : '.formatter.delivery'
+													}"/>
+												</firstStatus>
+											</ObjectListItem>
 										</items>
 									</List>
 								</content>
