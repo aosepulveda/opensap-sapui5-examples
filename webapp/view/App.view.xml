@@ -88,8 +88,11 @@
 										sorter : {
 											path : 'Category',
 											group : true
-										}
-									}">
+											}
+										}"
+										growing="true"
+										growingThreshold="5"
+										growingScrollToLoad="false">
 										<headerToolbar>
 											<Toolbar>
 												<Title text="{i18n>productListTitle}"/>
@@ -112,7 +115,9 @@
 												}"
 												intro="{ProductID}"
 												numberState="{= ${Price} > 500 ? 'Error' : 'Success'}"
-												numberUnit="{CurrencyCode}">
+												numberUnit="{CurrencyCode}"
+												press="onItemSelected"
+												type="Active">
 												<firstStatus>
 													<ObjectStatus text="{
 														parts: [
@@ -125,6 +130,16 @@
 											</ObjectListItem>
 										</items>
 									</List>
+									<Panel id="productDetailsPanel" 
+										headerText="{i18n>panelHeader}" 
+										visible="false">
+										<l:Grid>
+											<Text text="{i18n>ProductID}: {ProductID}"/>
+											<Text text="{i18n>ProductName}: {Name}"/>
+											<Text text="{i18n>Description}:\n {Description}"/>
+											<Text text="{i18n>Price}: {Price}"/>
+										</l:Grid>
+									</Panel>
 								</content>
 							</IconTabFilter>
 						</items>
