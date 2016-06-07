@@ -79,6 +79,23 @@
 										text="{i18n>layoutDraftButton}"
 										icon="sap-icon://save" />
 								</Toolbar>
+								<Panel id="locationPanel" 
+									headerText="{i18n>panelLocationHeader}" 
+									visible="true">
+									<Image
+										src="{
+											parts: [
+												{path: 'address>/Street'},
+												{path: 'address>/City'},
+												{path: 'address>/Country'}
+											],
+											formatter : '.formatter.formatMapUrl'
+										}">
+										<layoutData>
+											<FlexItemData growFactor="1" />
+										</layoutData>
+									</Image>
+								</Panel>
 							</IconTabFilter>
 							<IconTabFilter
 								text="{i18n>dataBindingFilter}" key="db">
